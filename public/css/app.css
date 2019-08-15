@@ -102,7 +102,6 @@ header .header__search-bar {
 }
 
 .navigation-line__login-container {
-  padding-right: 40px;
   background-color: white;
   display: flex;
   border-top-style: solid;
@@ -123,6 +122,14 @@ header .header__search-bar {
   border-left-color: black;
   border-left-style: solid;
   border-left-width: 3px;
+}
+
+.navigation-line__login-button_inactive {
+  background-color: grey;
+}
+
+.navigation-line__login-button_registration {
+  padding-right: 40px;
 }
 
 .main-screen {
@@ -231,5 +238,27 @@ footer .footer__year {
   font-size: 24px;
   color: white;
   font-weight: bold;
+}
+
+.registration-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration__element {
+  margin-top: 5px;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 

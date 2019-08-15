@@ -110,7 +110,6 @@ header{
     }
 
     &__login-container{
-        padding-right: $globalSideMargin;
         background-color: white;
         display: flex;
         border-top-style: solid;
@@ -131,6 +130,14 @@ header{
         border-left-color: black;
         border-left-style: solid;
         border-left-width: 3px;
+
+        &_inactive{
+            background-color: grey;
+        }
+
+        &_registration{
+            padding-right: $globalSideMargin;
+        }
     }
 }
 
@@ -242,4 +249,26 @@ footer{
         color: white;
         font-weight: bold;
     }
+}
+
+.registration-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.registration{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__element{
+        margin-top: 5px;
+    }
+}
+
+.wrapper{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }

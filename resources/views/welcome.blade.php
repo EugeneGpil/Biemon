@@ -44,7 +44,7 @@
                 <!-- Login -->
                 <div class="navigation-line__login-container">
                     <a class="navigation-line__login-button" href="#">Вход</a>
-                    <a class="navigation-line__login-button" href="#">Регистрация</a>
+                    <a class="navigation-line__login-button navigation-line__login-button_registration" href="#">Регистрация</a>
                 </div>
                 <!-- End of Login -->
             </nav>
