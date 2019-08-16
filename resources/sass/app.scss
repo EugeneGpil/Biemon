@@ -69,6 +69,8 @@ header{
     height: 164px;
     background-image: url('/storage/HeaderBackground.jpg');
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -150,6 +152,7 @@ header{
     background-repeat: no-repeat;
     background-position: center;
     height: 699px;
+    padding-right: $globalSideMargin;
 
     .main-screen-info-container{
         flex: 1;
@@ -177,7 +180,6 @@ header{
 }
 
 .sidebar{
-    padding-right: $globalSideMargin;
     //background-color: $main;
     width: 310px;
     display: flex;
@@ -198,6 +200,7 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    padding-left: $globalSideMargin;
     padding-left: $globalSideMargin;
 }
 
@@ -271,4 +274,80 @@ footer{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+}
+
+.screen{
+    padding-right: $globalSideMargin;
+    padding-left: $globalSideMargin;
+    display: flex;
+    flex: 1;
+    background-image: url('storage/UserBackground.jpg');
+    padding-bottom: 5px;
+}
+
+.content-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.user-info-container{
+    display: flex;
+    background-color: $main;
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+
+    &__avatar{
+        background-image: url('storage/Avatar.jpg');
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__info-container{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    &__info{
+        color: white;
+        font-size: 24px;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    &__button{
+        margin-bottom: 5px;
+        width: 200px;
+        margin-left: 0;
+    }
+
+    &__buttons-container{
+        margin-top: 14px;
+    }
+}
+
+.content{
+    flex: 1;
+    padding-left: $fromSidebarMargin;
+    padding-right: $fromSidebarMargin;
+}
+
+.article{
+    background-color: $main;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 10px;
+
+    h1{
+        color: white;
+    }
+
+    p{
+        text-align: justify;
+    }
 }

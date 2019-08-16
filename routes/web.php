@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::get('/registration', function () {
     return view('registration');
 });
+
+Route::get('/confirmationOfRegistration', function () {
+    return view('confirmationOfRegistration');
+});
+
+Route::get('/user/1', function () {
+    return view('user');
+});

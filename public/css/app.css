@@ -60,6 +60,8 @@ header {
   height: 164px;
   background-image: url("/storage/HeaderBackground.jpg");
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -141,6 +143,7 @@ header .header__search-bar {
   background-repeat: no-repeat;
   background-position: center;
   height: 699px;
+  padding-right: 40px;
 }
 
 .main-screen .main-screen-info-container {
@@ -167,7 +170,6 @@ header .header__search-bar {
 }
 
 .sidebar {
-  padding-right: 40px;
   width: 310px;
   display: flex;
   flex-direction: column;
@@ -187,6 +189,7 @@ header .header__search-bar {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding-left: 40px;
   padding-left: 40px;
 }
 
@@ -260,5 +263,81 @@ footer .footer__year {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+.screen {
+  padding-right: 40px;
+  padding-left: 40px;
+  display: flex;
+  flex: 1;
+  background-image: url(/images/UserBackground.jpg?2622259176af8f3ce79b89d0a3e05178);
+  padding-bottom: 5px;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.user-info-container {
+  display: flex;
+  background-color: #66680a;
+  margin-top: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.user-info-container__avatar {
+  background-image: url(/images/Avatar.jpg?5a6c0068bbc35e696fabe1d878f80d74);
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-info-container__info-container {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.user-info-container__info {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.user-info-container__button {
+  margin-bottom: 5px;
+  width: 200px;
+  margin-left: 0;
+}
+
+.user-info-container__buttons-container {
+  margin-top: 14px;
+}
+
+.content {
+  flex: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.article {
+  background-color: #66680a;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.article h1 {
+  color: white;
+}
+
+.article p {
+  text-align: justify;
 }
 
