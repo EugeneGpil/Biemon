@@ -552,3 +552,8 @@ footer .footer__year {
   margin-top: 5px;
 }
 
+.category {
+  color: white;
+  font-weight: bold;
+}
+

@@ -58,3 +58,11 @@ Route::get('/feed/users', function () {
 Route::get('/article/1', function () {
     return view('article');
 });
+
+Route::get('/categories', function () {
+    return view('categories');
+});
+
+Route::get('/info', function () {
+    return view('info');
+});
