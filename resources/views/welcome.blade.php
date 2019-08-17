@@ -35,10 +35,11 @@
             <nav class="navigation-line">
                 <!-- Main navigation -->
                 <div class="navigation-line__navigation">
-                    <a href="#" class="button">Рекомендации</a>
-                    <a href="#" class="button">Новое</a>
-                    <a href="#" class="button">Авторы</a>
-                    <a href="#" class="button">По категориям</a>
+                          <a href="#" class="button navigation-line__button">Рекомендации</a>
+                    <a href="#" class="button navigation-line__button">Новое</a>
+                    <a href="#" class="button navigation-line__button">Авторы</a>
+                    <a href="#" class="button navigation-line__button">По категориям</a>
+                    <a href="#" class="button navigation-line__button">Написать</a>
                 </div>
                 <!-- End of Main navigation -->
                 <!-- Login -->

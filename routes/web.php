@@ -26,3 +26,35 @@ Route::get('/confirmationOfRegistration', function () {
 Route::get('/user/1', function () {
     return view('user');
 });
+
+Route::get('/messageTo/1', function () {
+    return view('messageTo');
+});
+
+Route::get('/messages/1/1', function () {
+    return view('messageList');
+});
+
+Route::get('/messageFrom/1', function () {
+    return view('messageFrom');
+});
+
+Route::get('/article/create', function () {
+    return view('newArticle');
+});
+
+Route::get('/article/1/edit', function () {
+    return view('editArticle');
+});
+
+Route::get('/feed/1', function () {
+    return view('feed');
+});
+
+Route::get('/feed/users', function () {
+    return view('feedUsers');
+});
+
+Route::get('/article/1', function () {
+    return view('article');
+});

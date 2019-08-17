@@ -21,6 +21,7 @@ a{
     width: 170px;
     text-align: center;
     color: white;
+    border-style: none;
 
     &:first-child{
         margin-left: 0;
@@ -63,6 +64,10 @@ a{
         margin-top: 3px;
         text-align: justify;
     }
+
+    &__avatar{
+        background-image: url('/storage/avatar.jpg');
+    }
 }
 
 header{
@@ -104,6 +109,10 @@ header{
     border-bottom-style: solid;
     border-bottom-color: black;
     border-bottom-width: 1px;
+
+    &__button{
+        width: 130px;
+    }
 
     &__navigation{
         display: flex;
@@ -291,12 +300,15 @@ footer{
     justify-content: center;
 }
 
-.user-info-container{
-    display: flex;
-    background-color: $main;
+.container{
     margin-top: 5px;
+    background-color: $main;
     border-radius: 10px;
     overflow: hidden;
+}
+
+.user-info-container{
+    display: flex;
     flex: 1;
 
     &__avatar{
@@ -313,22 +325,26 @@ footer{
         margin-top: 10px;
     }
 
-    &__info{
-        color: white;
-        font-size: 24px;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
     &__button{
-        margin-bottom: 5px;
-        width: 200px;
+        min-width: 200px;
         margin-left: 0;
+        margin-bottom: 5px;
     }
 
     &__buttons-container{
         margin-top: 14px;
+        width: 410px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
+}
+
+.info{
+    color: white;
+    font-size: 24px;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .content{
@@ -338,10 +354,10 @@ footer{
 }
 
 .article{
-    background-color: $main;
-    border-radius: 10px;
     padding: 5px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
 
     h1{
         color: white;
@@ -349,5 +365,198 @@ footer{
 
     p{
         text-align: justify;
+    }
+
+    &__author{
+        align-self: flex-end;
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.adressee{
+    display: flex;
+    width: 100%;
+
+    &__avatar{
+        width: 100px;
+        height: 100px;
+        background-image: url('/storage/avatar.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-top-left-radius: 10px;
+    }
+
+    &__info{
+        padding-left: 10px;
+    }
+
+    .button{
+        margin-left: 0px;
+    }
+}
+
+.message{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .button{
+        margin-top: 5px;
+        align-self: flex-end;
+    }
+
+    &__text{
+        height: 150px;
+    }
+}
+
+.message-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+    &__message{
+        border-radius: 10px;
+        background-color: $button;
+        margin-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    &__adresses-message{
+        align-self: flex-start;
+        max-width: 80%;
+    }
+
+    &__own-message{
+        align-self: flex-end;
+        max-width: 80%;
+    }
+}
+
+.pages-arrows{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    &__element{
+        background-color: $button;
+        border-radius: 3px;
+        width: 30px;
+        text-align: center;
+        padding-top: 2px;
+    }
+}
+
+.new-article{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .button{
+        align-self: flex-end;
+    }
+
+    &__text{
+        height: 500px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    &__buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 618px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    @media screen and (max-width: 1346px){
+        width: auto;
+        flex-direction: column;
+        width: 300px;
+    }
+}
+
+.articles-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-container{
+    background-color: $main;
+
+    &__text-container{
+        margin-left: 10px;
+        padding-top: 5px;
+    }
+
+    .button{
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+.comment{
+    display: flex;
+
+    &__avatar{
+        background-image: url('/storage/avatar.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-width: 100px;
+        height: 100px;
+    }
+
+    &__text{
+        padding: 5px;
+    }
+
+    &__author-info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__username{
+        font-weight: bold;
+        color: white;
+        align-self: center;
+        margin-top: 5px;
+    }
+}
+
+.new-comment{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+
+    &__text{
+        width: 100%;
+        height: 150px;
+    }
+
+    .button{
+        align-self: flex-end;
+        margin-top: 5px;
     }
 }

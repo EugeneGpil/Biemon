@@ -12,6 +12,7 @@ a {
   width: 170px;
   text-align: center;
   color: white;
+  border-style: none;
 }
 
 .button:first-child {
@@ -56,6 +57,10 @@ a {
   text-align: justify;
 }
 
+.article-container__avatar {
+  background-image: url("/storage/avatar.jpg");
+}
+
 header {
   height: 164px;
   background-image: url("/storage/HeaderBackground.jpg");
@@ -95,6 +100,10 @@ header .header__search-bar {
   border-bottom-style: solid;
   border-bottom-color: black;
   border-bottom-width: 1px;
+}
+
+.navigation-line__button {
+  width: 130px;
 }
 
 .navigation-line__navigation {
@@ -280,12 +289,15 @@ footer .footer__year {
   justify-content: center;
 }
 
-.user-info-container {
-  display: flex;
-  background-color: #66680a;
+.container {
   margin-top: 5px;
+  background-color: #66680a;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.user-info-container {
+  display: flex;
   flex: 1;
 }
 
@@ -303,21 +315,25 @@ footer .footer__year {
   margin-top: 10px;
 }
 
-.user-info-container__info {
-  color: white;
-  font-size: 24px;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
 .user-info-container__button {
-  margin-bottom: 5px;
-  width: 200px;
+  min-width: 200px;
   margin-left: 0;
+  margin-bottom: 5px;
 }
 
 .user-info-container__buttons-container {
   margin-top: 14px;
+  width: 410px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .content {
@@ -327,10 +343,10 @@ footer .footer__year {
 }
 
 .article {
-  background-color: #66680a;
-  border-radius: 10px;
   padding: 5px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .article h1 {
@@ -339,5 +355,200 @@ footer .footer__year {
 
 .article p {
   text-align: justify;
+}
+
+.article__author {
+  align-self: flex-end;
+  color: white;
+  font-weight: bold;
+}
+
+.adressee {
+  display: flex;
+  width: 100%;
+}
+
+.adressee__avatar {
+  width: 100px;
+  height: 100px;
+  background-image: url("/storage/avatar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 10px;
+}
+
+.adressee__info {
+  padding-left: 10px;
+}
+
+.adressee .button {
+  margin-left: 0px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.message .button {
+  margin-top: 5px;
+  align-self: flex-end;
+}
+
+.message__text {
+  height: 150px;
+}
+
+.message-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.message-list__message {
+  border-radius: 10px;
+  background-color: #888a0d;
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.message-list__adresses-message {
+  align-self: flex-start;
+  max-width: 80%;
+}
+
+.message-list__own-message {
+  align-self: flex-end;
+  max-width: 80%;
+}
+
+.pages-arrows {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.pages-arrows__element {
+  background-color: #888a0d;
+  border-radius: 3px;
+  width: 30px;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.new-article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-article .button {
+  align-self: flex-end;
+}
+
+.new-article__text {
+  height: 500px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.new-article__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 618px;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1346px) {
+  .articles {
+    width: auto;
+    flex-direction: column;
+    width: 300px;
+  }
+}
+
+.articles-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-container {
+  background-color: #66680a;
+}
+
+.user-container__text-container {
+  margin-left: 10px;
+  padding-top: 5px;
+}
+
+.user-container .button {
+  margin-left: 0;
+  margin-top: 5px;
+}
+
+.comment {
+  display: flex;
+}
+
+.comment__avatar {
+  background-image: url("/storage/avatar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-width: 100px;
+  height: 100px;
+}
+
+.comment__text {
+  padding: 5px;
+}
+
+.comment__author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment__username {
+  font-weight: bold;
+  color: white;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.new-comment {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
+}
+
+.new-comment__text {
+  width: 100%;
+  height: 150px;
+}
+
+.new-comment .button {
+  align-self: flex-end;
+  margin-top: 5px;
 }
 
