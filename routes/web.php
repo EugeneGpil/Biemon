@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainPageController@index');
 
 Route::get('/registration', function () {
     return view('registration');
@@ -66,3 +64,7 @@ Route::get('/categories', function () {
 Route::get('/info', function () {
     return view('info');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
