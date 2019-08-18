@@ -30,7 +30,7 @@ a {
 }
 
 .article-container__image {
-  background-image: url("/storage/ArticlePreview.jpg");
+  background-image: url("/images/ArticlePreview.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -58,12 +58,12 @@ a {
 }
 
 .article-container__avatar {
-  background-image: url("/storage/avatar.jpg");
+  background-image: url("/images/avatar.jpg");
 }
 
 header {
   height: 164px;
-  background-image: url("/storage/HeaderBackground.jpg");
+  background-image: url("/images/HeaderBackground.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -147,7 +147,7 @@ header .header__search-bar {
   display: flex;
   padding-left: 40px;
   justify-content: flex-end;
-  background-image: url("/storage/MainScreenBackground.jpg");
+  background-image: url("/images/MainScreenBackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -194,7 +194,7 @@ header .header__search-bar {
   height: 699px;
   border-top-style: solid;
   border-top-width: 5px;
-  background-image: url("/storage/SecondScreenBackground.jpg");
+  background-image: url("/images/SecondScreenBackground.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -289,7 +289,7 @@ footer .footer__year {
   padding-left: 40px;
   display: flex;
   flex: 1;
-  background-image: url(/images/UserBackground.jpg?2622259176af8f3ce79b89d0a3e05178);
+  background-color: #2b3314;
   padding-bottom: 5px;
 }
 
@@ -312,7 +312,7 @@ footer .footer__year {
 }
 
 .user-info-container__avatar {
-  background-image: url(/images/Avatar.jpg?5a6c0068bbc35e696fabe1d878f80d74);
+  background-image: url(/images/avatar.jpg?5a6c0068bbc35e696fabe1d878f80d74);
   width: 200px;
   height: 200px;
   background-size: cover;
@@ -381,7 +381,7 @@ footer .footer__year {
 .adressee__avatar {
   width: 100px;
   height: 100px;
-  background-image: url("/storage/avatar.jpg");
+  background-image: url("/images/avatar.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -521,7 +521,7 @@ footer .footer__year {
 }
 
 .comment__avatar {
-  background-image: url("/storage/avatar.jpg");
+  background-image: url("/images/avatar.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
