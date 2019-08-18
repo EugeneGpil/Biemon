@@ -42,11 +42,28 @@
                     <a href="#" class="button navigation-line__button">Написать</a>
                 </div>
                 <!-- End of Main navigation -->
-                <!-- Login -->
-                <div class="navigation-line__login-container">
-                    <a class="navigation-line__login-button" href="#">Вход</a>
-                    <a class="navigation-line__login-button navigation-line__login-button_registration" href="#">Регистрация</a>
-                </div>
-                <!-- End of Login -->
+
+                @guest
+                    <!-- Login -->
+                    <div>
+                        <div class="navigation-line__login-container">
+                            <a class="navigation-line__login-button" href="#">Вход</a>
+                            <a class="navigation-line__login-button navigation-line__login-button_registration" href="#">Регистрация</a>
+                        </div>
+                    </div>
+                    <!-- End of Login -->
+                @endguest
+
+                @auth
+                    <div class="navigation-line__auth-container">
+                        <div class="navigation-line__user-info">
+                            <a class="navigation-line__username" href="#">Mihail</a>
+                            <a class="button" href="#">4</a>
+                        </div>
+                        <div class="navigation-line__login-container">
+                            <a class="navigation-line__login-button navigation-line__login-button_registration" href="#">Выход</a>
+                        </div>
+                    </div>
+                @endauth
             </nav>
             <!-- End of Main Navigation Line-->

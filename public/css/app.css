@@ -143,6 +143,29 @@ header .header__search-bar {
   padding-right: 40px;
 }
 
+.navigation-line__user-info {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.navigation-line__user-info .button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.navigation-line__username {
+  color: white;
+  font-size: 26px;
+}
+
+.navigation-line__auth-container {
+  display: flex;
+}
+
 .main-screen {
   display: flex;
   padding-left: 40px;

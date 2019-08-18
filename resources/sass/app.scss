@@ -150,6 +150,27 @@ header{
             padding-right: $globalSideMargin;
         }
     }
+
+    &__user-info{
+        display: flex;
+        align-items: center;
+        margin-right: 5px;
+
+        .button{
+            width: fit-content;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+    }
+
+    &__username{
+        color: white;
+        font-size: 26px;
+    }
+
+    &__auth-container{
+        display: flex;
+    }
 }
 
 .main-screen{

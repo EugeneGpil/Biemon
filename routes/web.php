@@ -17,7 +17,7 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
-Route::get('/confirmationOfRegistration', function () {
+Route::get('/confirmation-of-registration', function () {
     return view('confirmationOfRegistration');
 });
 
@@ -25,7 +25,7 @@ Route::get('/user/1', function () {
     return view('user');
 });
 
-Route::get('/messageTo/1', function () {
+Route::get('/message-to/1', function () {
     return view('messageTo');
 });
 
@@ -33,7 +33,7 @@ Route::get('/messages/1/1', function () {
     return view('messageList');
 });
 
-Route::get('/messageFrom/1', function () {
+Route::get('/message-from/1', function () {
     return view('messageFrom');
 });
 
