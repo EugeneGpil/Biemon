@@ -159,8 +159,8 @@ header{
 
         .button{
             width: fit-content;
-            padding-left: 3px;
-            padding-right: 3px;
+            padding-left: 7px;
+            padding-right: 7px;
         }
     }
 
@@ -306,6 +306,10 @@ footer{
 
     &__element{
         margin-top: 5px;
+    }
+
+    &__error{
+        color: red;
     }
 }
 

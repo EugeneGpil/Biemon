@@ -58,7 +58,7 @@
                     <div class="navigation-line__auth-container">
                         <div class="navigation-line__user-info">
                             <a class="navigation-line__username" href="#">{{ auth()->user()->name }}</a>
-                            <a class="button" href="#">4</a>
+                            <a class="button navigation-line__notification" href="#">4</a>
                         </div>
                         <div class="navigation-line__login-container">
                             <form id="logout-form" action="/logout" method="POST">

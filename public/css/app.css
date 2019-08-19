@@ -133,6 +133,7 @@ header .header__search-bar {
   border-left-color: black;
   border-left-style: solid;
   border-left-width: 3px;
+  background-color: white;
 }
 
 .navigation-line__login-button_inactive {
@@ -153,8 +154,8 @@ header .header__search-bar {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 .navigation-line__username {
@@ -299,6 +300,10 @@ footer .footer__year {
 
 .registration__element {
   margin-top: 5px;
+}
+
+.registration__error {
+  color: red;
 }
 
 .wrapper {
