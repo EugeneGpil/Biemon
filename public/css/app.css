@@ -595,3 +595,8 @@ footer .footer__year {
   font-weight: bold;
 }
 
+.warning {
+  margin: 5px;
+  font-size: 18px;
+}
+
