@@ -13,9 +13,9 @@
 
 Route::get('/', 'MainPageController@index');
 
-Route::get('/registration', function () {
-    return view('registration');
-});
+// Route::get('/login', function() {
+//     return view('login');
+// });
 
 Route::get('/confirmation-of-registration', function () {
     return view('confirmationOfRegistration');

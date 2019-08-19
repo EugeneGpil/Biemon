@@ -47,8 +47,8 @@
                     <!-- Login -->
                     <div>
                         <div class="navigation-line__login-container">
-                            <a class="navigation-line__login-button" href="#">Вход</a>
-                            <a class="navigation-line__login-button navigation-line__login-button_registration" href="#">Регистрация</a>
+                            <a class="navigation-line__login-button" href="/login">Вход</a>
+                            <a class="navigation-line__login-button navigation-line__login-button_registration" href="/register">Регистрация</a>
                         </div>
                     </div>
                     <!-- End of Login -->
@@ -57,11 +57,17 @@
                 @auth
                     <div class="navigation-line__auth-container">
                         <div class="navigation-line__user-info">
-                            <a class="navigation-line__username" href="#">Mihail</a>
+                            <a class="navigation-line__username" href="#">{{ auth()->user()->name }}</a>
                             <a class="button" href="#">4</a>
                         </div>
                         <div class="navigation-line__login-container">
-                            <a class="navigation-line__login-button navigation-line__login-button_registration" href="#">Выход</a>
+                            <form id="logout-form" action="/logout" method="POST">
+                                @csrf
+                            </form>
+                            <a class="navigation-line__login-button navigation-line__login-button_registration"
+                                href="javascript:{}" onclick="document.getElementById('logout-form').submit();">
+                                Выход
+                            </a>
                         </div>
                     </div>
                 @endauth
