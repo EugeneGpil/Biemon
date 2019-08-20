@@ -4,9 +4,24 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Comment;
 
 class Article extends Model
 {
+    private $comments = null;
+
+    private function setComments()
+    {
+        if (!$this->comments)
+            $this->comments = $this->hasMany('App\Comment')->get();
+    }
+
+    public function comments()
+    {
+        Article::setComments();
+        return $this->comments;
+    }
+
     public function ownsAuthorizedUser(){
         return (auth()->user() and ($this->user_id == auth()->user()->id));
     }

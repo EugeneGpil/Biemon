@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
+use App\Comment;
 use Illuminate\Http\Request;
+use App\Article;
 
-class ArticleController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('newArticle');
+        //
     }
 
     /**
@@ -33,65 +34,58 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Article $article)
     {
-        $article = new Article;
-        $article->user_id = auth()->id();
-        $article->category_id = 1;
-        $article->title = $request->title;
-        $article->text = $request->text;
-        $article->save();
+        $comment = new Comment;
+        $comment->article_id = $article->id;
+        $comment->user_id = auth()->user()->id;
+        $comment->text = $request->text;
+        $comment->save();
         return redirect('/article/'. $article->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $article)
+    public function show(Comment $comment)
     {
-        return view('article', compact('article'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(Comment $comment)
     {
-        return view('editArticle', compact('article'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, Comment $comment)
     {
-        $article->title = $request->title;
-        $article->text = $request->text;
-        $article->update();
-
-        return redirect('/article/'. $article->id);
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Article  $article
+     * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy(Comment $comment)
     {
-        $article->delete();
-
-        return redirect('/');
+        //
     }
 }

@@ -15,28 +15,27 @@
                     <a class="button" href="/article/{{ $article->id }}/edit">Редактировать</a>
                 @endif
             </section>
-            <section class="container">
-                <div class="comments">
-                    <div class="comment">
-                        <a href="#" class="comment__author-info">
-                            <div class="comment__avatar"></div>
-                            <div class="comment__username">Mihail</div>
-                        </a>
-                        <div class="comment__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum, enim sit amet tempus convallis, lorem felis egestas ante, ac placerat nisi purus nec nunc. Vivamus sit amet egestas magna, eget venenatis eros. Nullam eget nunc pellentesque, luctus ante ut, fermentum urna. Etiam ut ex ut ex interdum lobortis ac ut ante. Morbi ullamcorper tempus dui quis interdum. Phasellus faucibus purus lorem. Sed efficitur venenatis lectus ac convallis. Pellentesque tincidunt blandit sapien, vitae sodales quam ultricies eu. Suspendisse vel purus vel libero ullamcorper convallis non nec quam. Etiam dignissim commodo velit, a interdum augue sodales eget. Sed tristique feugiat gravida. Quisque convallis nunc ex, malesuada dictum ipsum auctor sit amet. In mattis gravida mi ut fermentum.</div>
+
+            @if ($article->comments())
+                <section class="container">
+                    <div class="comments">
+                        @foreach ($article->comments() as $comment)
+                            <div class="comment">
+                                <a href="#" class="comment__author-info">
+                                    <div class="comment__avatar" style="background-image:url('/images/avatars/{{ $comment->owner()->avatar }}.jpg'"></div>
+                                <div class="comment__username">{{ $comment->owner()->name}}</div>
+                                </a>
+                                <div class="comment__text">{{ $comment->text }}</div>
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="comment">
-                        <a href="#" class="comment__author-info">
-                            <div class="comment__avatar"></div>
-                            <div class="comment__username">Mihail</div>
-                        </a>
-                        <div class="comment__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum, enim sit amet tempus convallis, lorem felis egestas ante, ac placerat nisi purus nec nunc. Vivamus sit amet egestas.</div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            @endif
 
             @auth
                 <section class="container">
-                    <form class="new-comment">
+                    <form class="new-comment" method="POST" action="/article/{{ $article->id }}/comment">
+                        @csrf
                         <textarea name="text" class="new-comment__text" placeholder="Комментарий"></textarea>
                         <button id="submit" class="button">Отправить</button>
                     </form>

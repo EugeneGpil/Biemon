@@ -20,7 +20,7 @@ class Comments extends Migration
             $table->text('text');
             $table->timestamps();
 
-            $table->foreign('article_id')->references('id')->on('articles');
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

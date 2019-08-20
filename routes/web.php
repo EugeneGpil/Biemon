@@ -42,6 +42,9 @@ Route::post('/article', 'ArticleController@store')->middleware('auth');
 Route::get('/article/{article}/edit', 'ArticleController@edit')->middleware('owner');
 Route::patch('/article/{article}', 'ArticleController@update')->middleware('owner');
 Route::get('/article/{article}', 'ArticleController@show');
+Route::delete('/article/{article}', 'ArticleController@destroy')->middleware('owner');
+
+Route::post('/article/{article}/comment', 'CommentController@store')->middleware('auth');
 
 Route::get('/article/1/edit', function () {
     return view('editArticle');
