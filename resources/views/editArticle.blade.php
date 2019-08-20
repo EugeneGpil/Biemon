@@ -20,10 +20,10 @@
                     <div class="article-error article-edit__error">{{ $errors->first() }}</div>
                 @endif
                 <div class="new-article__buttons">
-                    <form id="delete-form" action="/article/{{ $article->id }}" method="POST">
+                    <form action="/article/{{ $article->id }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <a href="javascript:{}" onclick="document.getElementById('delete-form').submit()" class="button">Удалить статью</a>
+                        <button type="submit" class="button">Удалить статью</button>
                     </form>
                     <a class="button" href="javascript:{}" onclick="document.getElementById('article-form').submit()">Подтвердить</a>
                 </div>

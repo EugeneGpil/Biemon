@@ -12,6 +12,16 @@ class ArticleController extends Controller
         'text' => ['required']
     ];
 
+    public static function last()
+    {
+        return Article::orderBy('id', 'desc')->take(6)->get();
+    }
+
+    public static function popular()
+    {
+        return Article::orderBy('likes', 'desc')->take(6)->get();
+    }
+
     /**
      * Display a listing of the resource.
      *

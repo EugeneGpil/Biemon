@@ -31,4 +31,12 @@ class Article extends Model
     public function owner(){
         return $this->belongsTo('App\User', 'user_id', 'id')->get()->first();
     }
+
+    public function textPreview(){
+        return mb_strimwidth($this->text, 0, 110, '...');
+    }
+
+    public function titlePreview(){
+        return mb_strimwidth($this->title, 0, 14, '...');
+    }
 }
