@@ -8,6 +8,8 @@ use App\Comment;
 
 class Article extends Model
 {
+    protected $guarded = ['id', 'created_at', 'updated_at', 'views', 'likes'];
+
     private $comments = null;
 
     private function setComments()

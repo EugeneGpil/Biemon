@@ -9,7 +9,7 @@
             <input type="email" name="email" class="registration__element" placeholder="Почта" value="{{ old('email') }}" required>
             <input type="password" name="password" class="registration__element" placeholder="Пароль" required>
             <input type="password" name="password_confirmation" class="registration__element" placeholder="Повторите пароль" required>
-            <div class="registration__error">{{ $errors->first() }}</div>
+            <div class="error">{{ $errors->first() }}</div>
             <input type="submit" class="registration__element" value="Подтвердить">
         </form>
     </section>

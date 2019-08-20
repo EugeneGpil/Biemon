@@ -13,9 +13,12 @@
                 <form id="article-form" class="new-article" method="POST" action="/article/{{ $article->id }}">
                     @csrf
                     @method('PATCH')
-                    <input type="text" name="title" placeholder="Заголовок" value="{{ $article->title }}" required>
-                    <textarea name="text" placeholder="Текст статьи" class="new-article__text" required>{{ $article->text }}</textarea>
+                    <input type="text" name="title" placeholder="Заголовок" value="{{ $errors->first() ? old('title') : $article->title }}">
+                    <textarea name="text" placeholder="Текст статьи" class="new-article__text">{{ $errors->first() ? old('text') : $article->text }}</textarea>
                 </form>
+                @if ($errors->first())
+                    <div class="article-error article-edit__error">{{ $errors->first() }}</div>
+                @endif
                 <div class="new-article__buttons">
                     <form id="delete-form" action="/article/{{ $article->id }}" method="POST">
                         @csrf

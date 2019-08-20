@@ -12,8 +12,11 @@
             <section class="container message-container">
                 <form class="new-article" method="POST" action="/article">
                     @csrf
-                    <input type="text" name="title" placeholder="Заголовок" value="{{ old('title') }}" required>
-                    <textarea name="text" placeholder="Текст статьи" class="new-article__text" required>{{ old('text') }}</textarea>
+                    <input type="text" name="title" placeholder="Заголовок" value="{{ old('title') }}">
+                    <textarea name="text" placeholder="Текст статьи" class="new-article__text">{{ old('text') }}</textarea>
+                    @if ($errors->first())
+                        <div class="article-error">{{ $errors->first() }}</div>
+                    @endif
                     <button class="button">Создать</button>
                 </form>
             </section>

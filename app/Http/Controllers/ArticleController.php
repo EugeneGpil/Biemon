@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    private $validationArray = [
+        'title' => ['required', 'max:255'],
+        'text' => ['required']
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -35,12 +40,9 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $article = new Article;
-        $article->user_id = auth()->id();
-        $article->category_id = 1;
-        $article->title = $request->title;
-        $article->text = $request->text;
-        $article->save();
+        $article = Article::create(request()->validate($this->validationArray)
+            + ['user_id' => auth()->id(), 'category_id' => 1]);
+
         return redirect('/article/'. $article->id);
     }
 
@@ -75,6 +77,8 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
+        request()->validate($this->validationArray);
+
         $article->title = $request->title;
         $article->text = $request->text;
         $article->update();

@@ -307,10 +307,10 @@ footer{
     &__element{
         margin-top: 5px;
     }
+}
 
-    &__error{
-        color: red;
-    }
+.error{
+    color: red;
 }
 
 .wrapper{
@@ -512,6 +512,19 @@ footer{
         display: flex;
         justify-content: space-between;
     }
+}
+
+.article-error{
+    background-color: $notificationBackground;
+    width: fit-content;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.article-edit__error{
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .articles{

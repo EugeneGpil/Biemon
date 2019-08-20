@@ -302,7 +302,7 @@ footer .footer__year {
   margin-top: 5px;
 }
 
-.registration__error {
+.error {
   color: red;
 }
 
@@ -507,6 +507,21 @@ footer .footer__year {
   justify-content: space-between;
 }
 
+.article-error {
+  background-color: #aed498;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.article-edit__error {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
 .articles {
   display: flex;
   flex-wrap: wrap;
@@ -549,7 +564,6 @@ footer .footer__year {
 }
 
 .comment__avatar {
-  background-image: url("/images//avatars/avatar1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
