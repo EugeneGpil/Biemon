@@ -36,11 +36,8 @@ class CommentController extends Controller
      */
     public function store(Request $request, Article $article)
     {
-        $comment = new Comment;
-        $comment->article_id = $article->id;
-        $comment->user_id = auth()->user()->id;
-        $comment->text = $request->text;
-        $comment->save();
+        $comment = Comment::create(request()->validate(['text' => ['required']])
+            + ['article_id' => $article->id, 'user_id' => auth()->user()->id]);
         return redirect('/article/'. $article->id);
     }
 

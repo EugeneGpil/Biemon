@@ -36,7 +36,10 @@
                 <section class="container">
                     <form class="new-comment" method="POST" action="/article/{{ $article->id }}/comment">
                         @csrf
-                        <textarea name="text" class="new-comment__text" placeholder="Комментарий"></textarea>
+                        <textarea name="text" class="new-comment__text" placeholder="Комментарий" required>{{ old('text') }}</textarea>
+                        @if ($errors->first())
+                            <div class="article-error">{{ $errors->first() }}</div>
+                        @endif
                         <button id="submit" class="button">Отправить</button>
                     </form>
                 </section>

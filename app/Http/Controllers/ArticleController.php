@@ -12,14 +12,14 @@ class ArticleController extends Controller
         'text' => ['required']
     ];
 
-    public static function last()
+    public static function last($count)
     {
-        return Article::orderBy('id', 'desc')->take(6)->get();
+        return Article::orderBy('id', 'desc')->take($count)->get();
     }
 
-    public static function popular()
+    public static function popular($count)
     {
-        return Article::orderBy('likes', 'desc')->take(6)->get();
+        return Article::orderBy('likes', 'desc')->take($count)->get();
     }
 
     /**

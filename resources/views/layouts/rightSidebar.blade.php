@@ -2,7 +2,7 @@
         <a href="#" class="sidebar__button button">
             Популярные
         </a>
-        @foreach (\App\Http\Controllers\ArticleController::popular() as $article)
+        @foreach (\App\Http\Controllers\ArticleController::popular(6) as $article)
             <a href="#" class="article-container">
                 <div class="article-container__image" style="background-image: url('/images/articlePrevies/{{ $article->preview_image }}.jpg')"></div>
                 <div class="article-container__text-container">
