@@ -9,8 +9,11 @@
         <section class="content">
             <section class="article container">
                 <h1>{{ $article->title}}</h1>
-                {{ $article->text }}
-                <div class="article__author">Mihail</div>
+                {!! $article->text !!}
+                <div class="article__author">{{ $article->owner()->name }}</div>
+                @if ($article->ownsAuthorizedUser())
+                    <a class="button" href="#">Редактировать</a>
+                @endif
             </section>
             <section class="container">
                 <div class="comments">
