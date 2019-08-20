@@ -13,8 +13,8 @@
                 <form id="article-form" class="new-article" method="POST" action="/article/{{ $article->id }}">
                     @csrf
                     @method('PATCH')
-                    <input type="text" name="title" placeholder="Заголовок" value="{{ $article->title }}">
-                    <textarea name="text" placeholder="Текст статьи" class="new-article__text">{{ $article->text }}</textarea>
+                    <input type="text" name="title" placeholder="Заголовок" value="{{ $article->title }}" required>
+                    <textarea name="text" placeholder="Текст статьи" class="new-article__text" required>{{ $article->text }}</textarea>
                 </form>
                 <div class="new-article__buttons">
                     <form id="delete-form" action="/article/{{ $article->id }}" method="POST">
@@ -24,7 +24,6 @@
                     </form>
                     <a class="button" href="javascript:{}" onclick="document.getElementById('article-form').submit()">Подтвердить</a>
                 </div>
-
             </section>
             <!-- End of New Article -->
         </section>
