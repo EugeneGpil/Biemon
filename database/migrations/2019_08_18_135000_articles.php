@@ -19,6 +19,8 @@ class Articles extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('title');
             $table->text('text');
+            $table->unsignedBigInteger('views')->default('0');
+            $table->unsignedBigInteger('likes')->default('0');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
