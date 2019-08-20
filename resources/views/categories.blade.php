@@ -9,9 +9,9 @@
     <div class="content-container">
         <section class="content">
             <section class="article container">
-                <li><a href="#" class="category">Программирование</a></li>
-                <li><a href="#" class="category">Путешествия</a></li>
-                <li><a href="#" class="category">Кино</a></li>
+                @foreach (\App\Category::all() as $category)
+                    <li><a href="/category/{{ $category->id }}" class="category">{{ $category->title }}</a></li>
+                @endforeach
             </section>
         </section>
     </div>

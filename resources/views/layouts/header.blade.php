@@ -38,7 +38,7 @@
                     <a href="#" class="button navigation-line__button">Рекомендации</a>
                     <a href="#" class="button navigation-line__button">Новое</a>
                     <a href="#" class="button navigation-line__button">Авторы</a>
-                    <a href="#" class="button navigation-line__button">По категориям</a>
+                    <a href="/categories" class="button navigation-line__button">По категориям</a>
                     <a href="/article/create" class="button navigation-line__button">Написать</a>
                 </div>
                 <!-- End of Main navigation -->
