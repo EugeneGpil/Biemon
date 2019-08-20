@@ -12,7 +12,7 @@
                 {!! $article->text !!}
                 <div class="article__author">{{ $article->owner()->name }}</div>
                 @if ($article->ownsAuthorizedUser())
-                    <a class="button" href="#">Редактировать</a>
+                    <a class="button" href="/article/{{ $article->id }}/edit">Редактировать</a>
                 @endif
             </section>
             <section class="container">

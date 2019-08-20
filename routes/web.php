@@ -38,7 +38,9 @@ Route::get('/message-from/1', function () {
 });
 
 Route::get('/article/create', 'ArticleController@create')->middleware('auth');
-Route::post('/article',  'ArticleController@store') ->middleware('auth');
+Route::post('/article', 'ArticleController@store')->middleware('auth');
+Route::get('/article/{article}/edit', 'ArticleController@edit')->middleware('owner');
+Route::patch('/article/{article}', 'ArticleController@update')->middleware('owner');
 Route::get('/article/{article}', 'ArticleController@show');
 
 Route::get('/article/1/edit', function () {
