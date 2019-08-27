@@ -21,7 +21,7 @@
 
             <!-- Header -->
             <header class="header">
-                <div class="header__logo">Biemon</div>
+                <a href="/" class="header__logo">Biemon</a>
                 <form class="header__search">
                     <input class="header__search-bar" name="search" placeholder="Поиск">
                     <button class="header__search-button">
@@ -35,7 +35,7 @@
             <nav class="navigation-line">
                 <!-- Main navigation -->
                 <div class="navigation-line__navigation">
-                    <a href="#" class="button navigation-line__button">Рекомендации</a>
+                    <a href="{{ route('popularArticles') }}" class="button navigation-line__button">Популярное</a>
                     <a href="#" class="button navigation-line__button">Новое</a>
                     <a href="#" class="button navigation-line__button">Авторы</a>
                     <a href="/categories" class="button navigation-line__button">По категориям</a>

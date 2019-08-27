@@ -11,55 +11,30 @@
             <!-- Message -->
             <section class="container articles-container">
                 <div class="articles">
-                    <a href="#" class="article-container">
-                        <div class="article-container__image"></div>
-                        <div class="article-container__text-container">
-                            <div class="article-container__headline">
-                                Охота на снежного леопарда
+
+                    @foreach ($articles as $article)
+                        <a href="/article/{{ $article->id }}" class="article-container">
+                            <div class="article-container__image" style="background-image: url('/images/{{ $article->preview_image }}"></div>
+                            <div class="article-container__text-container">
+                                <div class="article-container__headline">
+                                    {{ $article->titlePreview() }}
+                                </div>
+                                <div class="article-container__text">
+                                    {{ $article->textPreview() }}
+                                </div>
                             </div>
-                            <div class="article-container__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a metus tristique, placerat risus ac, bibendum...
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="article-container">
-                        <div class="article-container__image"></div>
-                        <div class="article-container__text-container">
-                            <div class="article-container__headline">
-                                Охота на снежного леопарда
-                            </div>
-                            <div class="article-container__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a metus tristique, placerat risus ac, bibendum...
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="article-container">
-                        <div class="article-container__image"></div>
-                        <div class="article-container__text-container">
-                            <div class="article-container__headline">
-                                Охота на снежного леопарда
-                            </div>
-                            <div class="article-container__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a metus tristique, placerat risus ac, bibendum...
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="article-container">
-                        <div class="article-container__image"></div>
-                        <div class="article-container__text-container">
-                            <div class="article-container__headline">
-                                Охота на снежного леопарда
-                            </div>
-                            <div class="article-container__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a metus tristique, placerat risus ac, bibendum...
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
+
                 </div>
                 <div class="pages-arrows">
-                    <div class="pages-arrows__element"><i class="fas fa-arrow-left"></i></div>
-                    <div class="pages-arrows__element">1</div>
-                    <div class="pages-arrows__element"><i class="fas fa-arrow-right"></i></div>
+                    <a href="/article/popular/{{ $articles->currentPage() != 2 ? $articles->currentPage()-1 : ""}}" class="pages-arrows__element" {{ $articles->currentPage() <= 1 ? "style=visibility:hidden" : "" }}>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <div class="pages-arrows__element">{{ $articles->currentPage() }}</div>
+                    <a href="/article/popular/{{ $articles->currentPage()+1 }}" class="pages-arrows__element" {{ $articles->currentPage() >= $articles->lastPage() ? "style=visibility:hidden" : "" }}>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </section>
             <!-- End of Message -->

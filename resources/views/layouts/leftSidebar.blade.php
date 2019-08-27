@@ -3,8 +3,8 @@
         Последние
     </a>
     @foreach (\App\Http\Controllers\ArticleController::last(6) as $article)
-        <a href="/article/{{ $article->id }}" class="article-container">
-            <div class="article-container__image" style="background-image: url('/images/articlePrevies/{{ $article->preview_image }}.jpg')"></div>
+        <a href="{{ route('article', ['article' => $article->id]) }}" class="article-container">
+            <div class="article-container__image" style="background-image: url('/images/{{ $article->preview_image }}')"></div>
             <div class="article-container__text-container">
                 <div class="article-container__headline" title="{{ $article->title }}">
                     {{ $article->titlePreview() }}

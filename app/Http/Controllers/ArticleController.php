@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class ArticleController extends Controller
 {
@@ -11,15 +12,17 @@ class ArticleController extends Controller
         'title' => ['required', 'max:255'],
         'text' => ['required']
     ];
+    private $articlePerPage = 4;
 
     public static function last($count)
     {
         return Article::orderBy('id', 'desc')->take($count)->get();
     }
 
-    public static function popular($count)
+    public static function popular($count, $skip = 0)
     {
-        return Article::orderBy('likes', 'desc')->take($count)->get();
+        return Article::orderBy('likes', 'desc')->skip($skip)
+            ->take($count)->get();
     }
 
     /**
@@ -107,5 +110,22 @@ class ArticleController extends Controller
         $article->delete();
 
         return redirect('/');
+    }
+
+    public function popularShow($page = 1)
+    {
+        //only /article/popular url ($page autodefined as integer 1)
+        //not /article/popular/1 ($page defined as string "1")
+        if ($page === "1"){
+            abort(404);
+        }
+
+        Paginator::currentPageResolver(function() use ($page) {
+            return $page;
+        });
+
+        $articles = Article::orderBy('likes', 'desc')->paginate($this->articlePerPage);
+
+        return view('feed',compact('articles'));
     }
 }

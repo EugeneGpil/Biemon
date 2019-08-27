@@ -19,7 +19,7 @@ class Articles extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('title');
             $table->text('text');
-            $table->string('preview_image')->default('preview1');
+            $table->string('preview_image')->default('preview1.jpg');
             $table->unsignedBigInteger('views')->default('0');
             $table->unsignedBigInteger('likes')->default('0');
             $table->timestamps();

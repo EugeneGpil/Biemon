@@ -30,7 +30,6 @@ a {
 }
 
 .article-container__image {
-  background-image: url("/images/articlePrevies/preview1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

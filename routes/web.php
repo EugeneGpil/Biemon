@@ -37,12 +37,14 @@ Route::get('/message-from/1', function () {
     return view('messageFrom');
 });
 
+Route::get('/article/popular', 'ArticleController@popularShow')->name('popularArticles');
 Route::get('/article/create', 'ArticleController@create')->middleware('auth');
 Route::post('/article', 'ArticleController@store')->middleware('auth');
 Route::get('/article/{article}/edit', 'ArticleController@edit')->middleware('owner');
 Route::patch('/article/{article}', 'ArticleController@update')->middleware('owner');
-Route::get('/article/{article}', 'ArticleController@show');
+Route::get('/article/{article}', 'ArticleController@show')->name('article');
 Route::delete('/article/{article}', 'ArticleController@destroy')->middleware('owner');
+Route::get('/article/popular/{page}', 'ArticleController@popularShow');
 
 Route::post('/article/{article}/comment', 'CommentController@store')->middleware('auth');
 
